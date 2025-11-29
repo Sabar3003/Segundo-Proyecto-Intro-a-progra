@@ -1,9 +1,9 @@
 import random
 from collections import deque
 
-#Creacion de clases del terreno del mapa
+# Creacion de clases del terreno del mapa
 
-class Casilla: #Clase base para todos los tipos de casillas del mapa
+class Casilla: # Clase base para todos los tipos de casillas del mapa
     def __init__(self):
         self.transitable_jugador = True
         self.transitable_enemigo = True
@@ -37,7 +37,7 @@ class Tunel(Casilla): # Casilla por la que solo se puede mover un jugador normal
 
 
 
-#Clase encargada de generar el mapa
+# Clase encargada de generar el mapa
 class GeneradorMapa:
 
     def __init__(self, filas, columnas): # Inicializa el generador de mapas
@@ -104,7 +104,7 @@ class GeneradorMapa:
 
     def _casilla_aleatoria(self):
         """Se encarga de hacer el mapa más difícil."""
-        #configura las probabiliddes
+        # configura las probabiliddes
         opciones = [
             (Camino, 0.55),   # bajamos caminos
             (Muro,   0.20),   # aumentamos muros
@@ -142,11 +142,9 @@ class GeneradorMapa:
                 # Verifica límites del mapa
                 if 0 <= nf < self.filas and 0 <= nc < self.columnas:
                     if (nf, nc) not in visitado:
-                        # NO se puede caminar sobre muros
-                        if not isinstance(matriz[nf][nc], Muro):
+                        # CORRECCIÓN: Usar transitable_jugador en lugar de verificar solo Muros
+                        if matriz[nf][nc].transitable_jugador:  # ¡ESTA ES LA CORRECCIÓN CLAVE!
                             visitado.add((nf, nc))
                             q.append((nf, nc))
 
         return False # No se encontró camino a ninguna salida
-
-

@@ -1,0 +1,34 @@
+{
+  "cazador": [
+    {
+      "nombre": "Alejandro",
+      "puntaje": 340
+    },
+    {
+      "nombre": "Danrojara",
+      "puntaje": 280
+    }
+  ],
+  "escapa": [
+    {
+      "nombre": "Danrojara",
+      "puntaje": 100
+    },
+    {
+      "nombre": "Danrojara",
+      "puntaje": 100
+    },
+    {
+      "nombre": "Alejandro",
+      "puntaje": 100
+    },
+    {
+      "nombre": "Alejandro",
+      "puntaje": 100
+    },
+    {
+      "nombre": "Alejandro",
+      "puntaje": 0
+    }
+  ]
+}

@@ -8,8 +8,8 @@ pygame.init()
 pantalla = pygame.display.set_mode((ANCHO, ALTO))
 pygame.display.set_caption("Laberinto-Proyecto 2 TEC")
 
-COLOR_SALIDA = (255, 255, 0)   # Amarillo
-COLOR_INICIO = (0, 255, 255)   # Cyan (opcional, para que se vea mejor)
+COLOR_SALIDA = (255, 255, 0)   
+COLOR_INICIO = (0, 255, 255)   
 
 def dibujar_mapa(matriz, salidas):
     filas = len(matriz)

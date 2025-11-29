@@ -1,0 +1,26 @@
+{
+    "jugadores": [
+        "Alejandro",
+        "Marito",
+        "Danrojara",
+        "Gabriel"
+    ],
+    "puntajes": {
+        "Alejandro": {
+            "Escapa": 2,
+            "Cazador": 0
+        },
+        "Marito": {
+            "Escapa": 0,
+            "Cazador": 0
+        },
+        "Danrojara": {
+            "Escapa": 0,
+            "Cazador": 0
+        },
+        "Gabriel": {
+            "Escapa": 0,
+            "Cazador": 0
+        }
+    }
+}
