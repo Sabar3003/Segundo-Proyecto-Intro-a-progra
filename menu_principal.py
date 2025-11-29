@@ -84,6 +84,12 @@ def recortar_antorcha_sprites(sheet, num_frames=7):
 # Se encarga de las funciones principales del menú
 
 def menu_principal(nombre_jugador="Jugador"):
+        # --- INICIAR AUDIO ---
+    pygame.mixer.init()
+    pygame.mixer.music.load(os.path.join("retro-arcade-game-music-297305.mp3"))
+    pygame.mixer.music.set_volume(0.5)
+    pygame.mixer.music.play(-1)
+
     pygame.init()
     pantalla = pygame.display.set_mode((ANCHO, ALTO))
     pygame.display.set_caption("Menú Principal - Escapa del Laberinto")
@@ -264,7 +270,6 @@ from modo_escapa import modo_escapa
 from modo_cazador import modo_cazador
 from ventana_puntajes import mostrar_puntajes
 from puntajes import GestorPuntajes
-from ventana_controles import ventana_controles
 
 
 if __name__ == "__main__":
@@ -275,6 +280,11 @@ if __name__ == "__main__":
             crear_jugadores()
 
         elif seleccion == "Modo Escapa":
+            
+            pygame.mixer.init()
+            pygame.mixer.music.load(os.path.join("the-wandering-samurai-344699.mp3"))
+            pygame.mixer.music.set_volume(0.5)   # volumen 0.0 a 1.0
+            pygame.mixer.music.play(-1) 
             jugador = selector_jugador("Escapa")
             print("Jugador seleccionado para ESCAPA:", jugador)
             if jugador:                       
@@ -284,6 +294,10 @@ if __name__ == "__main__":
                 modo_escapa("Jugador")          
 
         elif seleccion == "Modo Cazador":
+            pygame.mixer.init()
+            pygame.mixer.music.load(os.path.join("the-wandering-samurai-344699.mp3"))
+            pygame.mixer.music.set_volume(0.5)   # volumen 0.0 a 1.0
+            pygame.mixer.music.play(-1)   
             jugador = selector_jugador("Cazador")
             if jugador:
                 modo_cazador(jugador)
@@ -297,7 +311,6 @@ if __name__ == "__main__":
 
         elif seleccion == "Configuración":
             print("Abrir configuración")
-            ventana_controles()
 
         elif seleccion == "Salir":
             pygame.quit()
